@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gamer Marks Calculator</title>
+<link rel="stylesheet" href="marks.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Grade-With-Switch-Statment</h1>
+
+    <label>Enter Full Percentage</label>
+    <input type="number" id="full" placeholder="Enter Full Percentage">
+
+    <label>Enter Obtained Percentage</label>
+    <input type="number" id="obtained" placeholder="Enter Obtained Percentage">
+
+    <button onclick="calculate()">START SCAN</button>
+
+    <div class="bar-box">
+        <div class="bar" id="bar"></div>
+    </div>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+
+<script>
+
+function calculate(){
+
+    const full = parseFloat(document.getElementById('full').value);
+    const obtained = parseFloat(document.getElementById('obtained').value);
+    const bar = document.getElementById('bar');
+    const result = document.getElementById('result');
+
+    if(isNaN(full) || isNaN(obtained) || full <= 0 || obtained < 0 || obtained > full){
+        result.innerHTML = '<span class="warning">INVALID INPUT!</span>';
+        bar.style.width = '0%';
+        return;
+    }
+
+    const percentage = (obtained / full) * 100;
+    bar.style.width = percentage + '%';
+
+    let grade;
+
+    switch (true) {
+        case percentage >= 90:
+            grade = "A+";
+            break;
+
+        case percentage >= 80:
+            grade = "A";
+            break;
+
+        case percentage >= 70:
+            grade = "B";
+            break;
+
+        case percentage >= 60:
+            grade = "C";
+            break;
+
+        case percentage >= 50:
+            grade = "D";
+            break;
+
+        case percentage >= 40:
+            grade = "E";
+            break;
+
+        default:
+            grade = "F";
+    }
+
+    result.innerHTML = `
+        Percentage: ${percentage.toFixed(2)}% <br>
+        Grade: ${grade}
+    `;
+}
+
+</script>
+
+</body>
+</html>

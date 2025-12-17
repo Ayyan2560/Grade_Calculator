@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at top, #12003b, #040014);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Card ===== */
+.card{
+    width:360px;
+    padding:30px;
+    border-radius:18px;
+    background:rgba(10, 0, 30, 0.9);
+    border:2px solid #7a2cff;
+    box-shadow:
+        0 0 20px #7a2cff,
+        0 0 60px rgba(122,44,255,0.4);
+    text-align:center;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:
+        0 0 30px #a66bff,
+        0 0 90px rgba(166,107,255,0.6);
+}
+
+/* ===== Title ===== */
+h1{
+    font-size:18px;
+    margin-bottom:25px;
+    color:#00ffee;
+    text-shadow:0 0 12px #00ffee;
+    letter-spacing:1px;
+}
+
+/* ===== Label ===== */
+label{
+    display:block;
+    text-align:left;
+    margin:15px 0 6px;
+    font-size:11px;
+    color:#bfb6ff;
+}
+
+/* ===== Input ===== */
+input{
+    width:100%;
+    padding:12px;
+    background:#050014;
+    border:2px solid #00ffee;
+    border-radius:10px;
+    color:#00ffee;
+    font-size:12px;
+    outline:none;
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:#4ddede;
+}
+
+input:focus{
+    box-shadow:0 0 15px #00ffee;
+}
+
+/* ===== Button ===== */
+button{
+    margin-top:22px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#7a2cff,#ff2cff);
+    color:#fff;
+    font-size:12px;
+    cursor:pointer;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #ff2cff;
+}
+
+/* ===== Progress Bar ===== */
+.bar-box{
+    margin-top:25px;
+    background:#0c0026;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:inset 0 0 10px #000;
+}
+
+.bar{
+    height:16px;
+    width:0%;
+    background:linear-gradient(90deg,#00ff88,#00ffee);
+    transition:1s ease;
+}
+
+/* ===== Result Text ===== */
+.result{
+    margin-top:20px;
+    font-size:13px;
+    color:#00ff88;
+    text-shadow:0 0 12px #00ff88;
+    animation:fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== Warning ===== */
+.warning{
+    color:#ff3b3b;
+    text-shadow:0 0 15px red;
+    animation:shake 0.2s infinite;
+}
+
+@keyframes shake{
+    0%{transform:translateX(-3px);}
+    50%{transform:translateX(3px);}
+    100%{transform:translateX(-3px);}
+}
